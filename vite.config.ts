@@ -23,7 +23,10 @@ export default defineConfig({
       // api
       imports: ["vue", "vue-router", "pinia"],
       resolvers: [ElementPlusResolver()],
-      eslintrc: { enabled: false } // 给eslint生产的配置 只需要一次,
+      eslintrc: {
+        enabled: false,
+        filepath: "./.eslintrc-auto-import.json"
+      } // 给eslint生产的配置 只需要一次,
     }),
     Components({
       //  解析组件

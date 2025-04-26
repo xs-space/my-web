@@ -3,4 +3,7 @@
   <HelloWorld msg="hi"></HelloWorld>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const a = ref(0)
+console.log(a)
+</script>

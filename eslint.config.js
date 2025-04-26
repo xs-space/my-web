@@ -4,6 +4,10 @@ import tseslint from "typescript-eslint" // 校验ts规范
 import pluginVue from "eslint-plugin-vue"
 import { defineConfig } from "eslint/config"
 import prettierRecommended from "eslint-plugin-prettier/recommended"
+import { createRequire } from "module"
+
+const require = createRequire(import.meta.url)
+const autoImportConfig = require("./.eslintrc-auto-import.json")
 
 export default defineConfig([
   {
@@ -16,7 +20,8 @@ export default defineConfig([
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.node
+        ...globals.node,
+        ...autoImportConfig.globals  // 自动导入全局变量
       }
     }
   },
