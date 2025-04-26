@@ -1,6 +1,6 @@
 <template>
   <IconifyIcon
-    :color="svgClass"
+    :class="svgClass"
     :icon="iconName"
     v-if="!isExt"
     v-bind="$attrs"

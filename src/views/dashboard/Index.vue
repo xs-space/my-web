@@ -9,13 +9,13 @@
 
   <svg-icon
     icon-name="token-branded:1art"
-    custom-class="text-red"
+    custom-class="text-red w-2em h-2em"
     @click="handle"
   ></svg-icon>
 
   <svg-icon
     icon-name="https://zishui.oss-cn-beijing.aliyuncs.com/BugFilled.svg"
-    custom-class="text-blue-100"
+    custom-class="text-blue-100 bg-red"
     @click="handle"
   ></svg-icon>
 </template>
