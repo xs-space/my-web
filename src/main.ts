@@ -6,4 +6,4 @@ const app = createApp(App);
 
 app.mount("#app");
 
-const a = 1
+let a = 1
