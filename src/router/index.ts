@@ -1,17 +1,28 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router"
+import Layout from "@/layout/Index.vue"
 
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
-    redirect: "/home"
-  },
-  {
-    path: "/home",
-    component: () => import("@/views/Home.vue")
-  },
-  {
-    path: "/about",
-    component: () => import("@/views/About.vue")
+    component: Layout,
+    redirect: "/dashboard",
+    children: [
+      {
+        path: "dashboard",
+        name: "Dashboard",
+        component: () => import("@/views/dashboard/Index.vue")
+      },
+      {
+        path: "about",
+        name: "About",
+        component: () => import("@/views/about/Index.vue")
+      },
+      {
+        path: "notfound",
+        name: "Notfound",
+        component: () => import("@/views/notfound/Index.vue")
+      }
+    ]
   }
 ]
 
