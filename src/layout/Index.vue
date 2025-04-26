@@ -16,3 +16,9 @@
     </div>
   </div>
 </template>
+
+<style lang="scss">
+.app-wrapper {
+  @apply text-red;
+}
+</style>
