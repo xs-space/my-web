@@ -1,8 +1,7 @@
 <template>
   <div class="app-wrapper">
     <div class="sidebar-container">
-      侧边导航
-      <!-- <sidebar></sidebar> -->
+      <sidebar></sidebar>
     </div>
     <div class="main-container">
       <div class="header">
