@@ -6,8 +6,7 @@
     <div class="main-container">
       <div class="header">
         <!--  上边包含收缩的导航条 -->
-        <!-- <navbar>导航条-1</navbar> -->
-        <div class="navbar">导航条-1</div>
+        <navbar></navbar>
         <div class="tags-view">导航条-2</div>
       </div>
       <div class="main">
@@ -17,27 +16,26 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app-wrapper {
   @apply flex w-full h-full;
 
   .sidebar-container {
-    @apply w-[var(--sidebar-width)] bg-red;
+    // 跨组件设置样式
+    :deep(.sidebar-container-menu:not(.el-menu--collapse)) {
+      @apply w-[var(--sidebar-width)];
+    }
   }
 
   .main-container {
     @apply flex flex-col flex-1;
-  }
 
-  .header {
-    @apply h-[84px];
+    .header {
+      @apply h-[84px];
 
-    .navbar {
-      @apply h-[var(--navbar-height)] bg-yellow;
-    }
-
-    .tags-view {
-      @apply h-[var(--tagsview-height)] bg-blue;
+      .tags-view {
+        @apply h-[var(--tagsview-height)] bg-blue;
+      }
     }
   }
 
