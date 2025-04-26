@@ -1,17 +1,16 @@
 <template>
   <div class="navbar">
     <hamburger
-      @toggleCollapse="handleCollapse"
-      :collapse="collapse"
+      @toggleCollapse="toggleSidebar"
+      :collapse="sidebar.opend"
     ></hamburger>
   </div>
 </template>
 
 <script lang="ts" setup>
-const collapse = ref(true)
-const handleCollapse = () => {
-  collapse.value = !collapse.value
-}
+import { useAppStore } from "@/stores/app"
+
+const { toggleSidebar, sidebar } = useAppStore()
 </script>
 
 <style lang="scss" scoped>

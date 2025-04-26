@@ -1,5 +1,4 @@
 <template>
-  <el-button @click="collapse = !collapse"></el-button>
   <el-menu
     class="sidebar-container-menu"
     router
@@ -7,7 +6,7 @@
     :background-color="varaibles.menuBg"
     :text-color="varaibles.menuText"
     :active-text-color="varaibles.menuActiveText"
-    :collapse="collapse"
+    :collapse="sidebar.opend"
   >
     <el-menu-item index="/dashboard">
       <template #title>侧边导航</template>
@@ -16,9 +15,10 @@
 </template>
 
 <script lang="ts" setup>
+import { useAppStore } from "@/stores/app"
 import varaibles from "@/style/variables.module.scss"
 
-const collapse = ref(false)
+const { sidebar } = useAppStore()
 const route = useRoute()
 const defaultActive = computed(() => {
   return route.path
