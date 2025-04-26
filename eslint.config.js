@@ -3,6 +3,7 @@ import globals from "globals"
 import tseslint from "typescript-eslint" // 校验ts规范
 import pluginVue from "eslint-plugin-vue"
 import { defineConfig } from "eslint/config"
+import prettierRecommended from "eslint-plugin-prettier/recommended"
 
 export default defineConfig([
   {
@@ -34,5 +35,6 @@ export default defineConfig([
     rules: {
       "no-console": "warn"
     }
-  }
+  },
+  prettierRecommended // 覆盖掉eslint的规范
 ])
