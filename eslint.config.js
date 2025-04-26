@@ -21,7 +21,7 @@ export default defineConfig([
       globals: {
         ...globals.browser,
         ...globals.node,
-        ...autoImportConfig.globals  // 自动导入全局变量
+        ...autoImportConfig.globals // 自动导入全局变量
       }
     }
   },
