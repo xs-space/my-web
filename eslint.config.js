@@ -33,7 +33,8 @@ export default defineConfig([
   {
     // 自定义规则,根据需要增加  eslint 主要是校验代码规范  prettier  格式化代码的
     rules: {
-      "no-console": "warn"
+      "no-console": "warn",
+      "vue/multi-word-component-names": "off"
     }
   },
   prettierRecommended // 覆盖掉eslint的规范
