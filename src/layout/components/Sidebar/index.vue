@@ -8,15 +8,14 @@
     :active-text-color="varaibles.menuActiveText"
     :collapse="sidebar.opend"
   >
-    <el-menu-item index="/dashboard">
-      <template #title>侧边导航</template>
-    </el-menu-item>
+    <sidebar-item v-for="route in routes" :key="route.path" :item="route" />
   </el-menu>
 </template>
 
 <script lang="ts" setup>
 import { useAppStore } from "@/stores/app"
 import varaibles from "@/style/variables.module.scss"
+import { routes } from "@/router"
 
 const { sidebar } = useAppStore()
 const route = useRoute()
