@@ -5,11 +5,11 @@
 </template>
 
 <script lang="ts" setup>
-import { ElMessage } from "element-plus"
+const { proxy } = getCurrentInstance()!
 
 const a = ref(0)
 console.log(a.value)
 const handle = () => {
-  ElMessage("This is a message")
+  proxy?.$message("This is a message")
 }
 </script>
